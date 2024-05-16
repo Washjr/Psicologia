@@ -9,12 +9,11 @@ public class Client {
 }
 
 public interface Target {
-    public void operation(){
-        // Lógica de funcionamento...
-    }
+    public void operation();
 }
 
 public class Adapter implements Target extends Adaptee {
+    @Override
     public void operation(){
         specific_operation();
     }    
@@ -28,6 +27,7 @@ public class Adapter implements Target {
         this.adaptee = adaptee;
     }
 
+    @Override
     public void operation(){
         adaptee.specific_operation();
     }
@@ -36,6 +36,6 @@ public class Adapter implements Target {
 
 public class Adaptee {
     public void specific_operation(){
-        // Lógica de funcionamento... 
+         // Lógica da operação específica...
     }    
 }
