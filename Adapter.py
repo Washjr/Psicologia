@@ -1,3 +1,4 @@
+// Classe Cliente
 public class Client {
     private Target target;
 
@@ -5,43 +6,27 @@ public class Client {
         this.target = target;        
     }
 
-    // Código restante...
+    public void doSomething() {
+        target.request();
+    }
 }
 
+// Interface Alvo
 public interface Target {
-    public void operation();
+    public void request();
 }
 
-public class Adapter implements Target extends Adaptee {
+// Classe Adaptador
+public class Adapter extends Adaptee implements Target {
     @Override
-    public void operation(){
-        specific_operation();
+    public void request(){
+        specific_request();
     }    
 }
 
-/*
-public class Target {
-    public void operation();
-}    
-*/
-
-/*
-public class Adapter extends Target {
-    private Adaptee adaptee;
-
-    public Adapter(Adaptee adaptee) {
-        this.adaptee = adaptee;
-    }
-
-    @Override
-    public void operation(){
-        adaptee.specific_operation();
-    }
-}
-*/
-
+// Classe Adaptada
 public class Adaptee {
-    public void specific_operation(){
-         // Lógica da operação específica...
+    public void specific_request(){
+         System.out.println("Comportamento específico da solicitação...");
     }    
 }
