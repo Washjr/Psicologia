@@ -20,7 +20,13 @@ public class Adapter implements Target extends Adaptee {
 }
 
 /*
-public class Adapter implements Target {
+public class Target {
+    public void operation();
+}    
+*/
+
+/*
+public class Adapter extends Target {
     private Adaptee adaptee;
 
     public Adapter(Adaptee adaptee) {
